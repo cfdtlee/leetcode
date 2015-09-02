@@ -17,7 +17,6 @@ public class Longest_Substring_Without_Repeating_Characters {
 			max = (end - begin +1) > max? (end - begin + 1): max;
 		}
 
-		// System.out.println(charset);
 		return max;
 	}
 	public static void main(String[] args) {
