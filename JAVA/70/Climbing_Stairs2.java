@@ -16,17 +16,7 @@ public class Climbing_Stairs2 {
         }
         for(int b = 0; b <= n/2; b++) {
             a = n - 2*b;
-            // System.out.println(tb[a][b]);
             ways += tb[a][b]; //
-            // int under = 1, above = 1;
-            // for(int i = 1; i <= a; i++) {
-            //     under *= i;
-            //     System.out.println(under);
-            // }
-            // for(int i = b+1; i <= a+b; i++) {
-            //     above *= i;
-            // }
-            // ways += above/under;
         }
         return ways;
     }
