@@ -1,3 +1,4 @@
+//space can be smaller->O(1)
 public class Maximum_Subarray {
     public static int maxSubArray(int[] nums) {
         int s[] = new int[nums.length];
