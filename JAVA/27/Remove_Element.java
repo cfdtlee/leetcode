@@ -18,3 +18,4 @@ public class Solution {
         return j+1;//Arrays.copyOfRange(nums, 0, i);
     }
 } // 
+
