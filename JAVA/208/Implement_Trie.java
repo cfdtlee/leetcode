@@ -1,15 +1,15 @@
 class TrieNode {
     // Initialize your data structure here.
     public TrieNode() {
-        char val;
-        boolean isWord;
-        TrieNode[] children = new TrieNode[26];
-        TrieNode() {}
-        TrieNode(char c) {
-            // this.val = c;
-            TrieNode node = new TrieNode();
-            node.val = c;
-        }
+        
+    }
+    int val;
+    boolean isWord;
+    TrieNode[] children = new TrieNode[26];
+    TrieNode(int c) {
+        // this.val = c;
+        TrieNode node = new TrieNode();
+        node.val = c;
     }
 }
 
@@ -22,32 +22,29 @@ public class Trie {
 
     // Inserts a word into the trie.
     public void insert(String word) {
-        char c;
+        int c;
         TrieNode tn = root;
         for(int i = 0; i < word.length(); i++) {
             c = word.charAt(i) - 'a';
             if(tn.children[c] == null) {
                 tn.children[c] = new TrieNode(c);
             }
-            else {
-                tn = tn.children[c];
-            }
+            tn = tn.children[c];
+            
         }
         tn.isWord = true;
     }
 
     // Returns if the word is in the trie.
     public boolean search(String word) {
-        char c;
+        int c;
         TrieNode tn = root;
         for(int i = 0; i < word.length(); i++) {
             c = word.charAt(i) - 'a';
             if(tn.children[c] == null) {
                 return false;
             }
-            else {
-                tn = tn.children[c];
-            }
+            tn = tn.children[c];
         }
         return tn.isWord;
     }
@@ -55,10 +52,10 @@ public class Trie {
     // Returns if there is any word in the trie
     // that starts with the given prefix.
     public boolean startsWith(String prefix) {
-        char c;
+        int c;
         TrieNode tn = root;
-        for(int i = 0; i < word.length(); i++) {
-            c = word.charAt(i) - 'a';
+        for(int i = 0; i < prefix.length(); i++) {
+            c = prefix.charAt(i) - 'a';
             if(tn.children[c] == null) {
                 return false;
             }
