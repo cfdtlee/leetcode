@@ -32,3 +32,4 @@ public class Solution {
         return result;
     }
 }
+// another way is to use list.addFirst(node.val) to implement this
