@@ -1,0 +1,22 @@
+public class Solution {
+    public String countAndSay(int n) {
+        String cur, result = "1";
+        while(--n > 0) {
+            
+            cur = result;
+            System.out.println(cur);
+            result = "";
+            int len = cur.length();
+            char c = cur.charAt(0);
+            int num = 1;
+            for(int i = 1; i <= len; i++) {
+                while(i < len && cur.charAt(i) == cur.charAt(i-1)) { // here I used if(), it ran in wrong
+                    num++; i++;
+                }
+                result += Integer.toString(num) + cur.charAt(i-1);
+                num = 1;
+            }
+        }
+        return result;
+    }
+}
