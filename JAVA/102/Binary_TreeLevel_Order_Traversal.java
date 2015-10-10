@@ -8,28 +8,32 @@
  * }
  */
 public class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> listOfList = new ArrayList<List<Integer>>();
-        if(root == null) {
-            return listOfList;
-        }
-        
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> lol = new LinkedList<List<Integer>>();
+        if(root == null) return lol;
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.offer(root);
+        queue.add(root);
+        TreeNode node;
         while(!queue.isEmpty()) {
             List<Integer> list = new LinkedList<Integer>();
-            int num = queue.size();
-            for(int i = 0; i < num; i++) {
-                if(queue.peek().left != null) {
-                    queue.offer(queue.peek().left);
+            int count = queue.size();
+            while(count-- > 0) {
+                System.out.println(count);
+                list.add(queue.peek().val);
+                node = queue.poll();
+                if(node.left != null) {
+                    queue.add(node.left);
                 }
-                if(queue.peek().right != null) {
-                    queue.offer(queue.peek().right);
+                if(node.right != null) {
+                    queue.add(node.right);
                 }
-                list.add(queue.poll().val);
             }
-            listOfList.add(list);
+            lol.add(0, list);
         }
-        return listOfList;
+        // Collections.reverse(lol);
+        return lol;
     }
 }
+
+if use BFS, list can be added like this
+list.get(list.size()-level-1).add(root.val);
