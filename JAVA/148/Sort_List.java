@@ -8,8 +8,6 @@
  */
 public class Solution {
     public ListNode sortList(ListNode head) {
-        // if(head.next == null) return head;
-        // ListNode mid = getMid(head, null);
         return mergeSort(head, null);
     }
     ListNode mergeSort(ListNode head, ListNode end) {
@@ -18,7 +16,7 @@ public class Solution {
         mid.next = null;
         head = mergeSort(head, mid);
         mid = mergeSort(t, end);
-        return merge(head, t);
+        return merge(head, mid);  // old version return merge(head, t); which takes me crazy to find the bug
     }
     ListNode merge(ListNode head, ListNode mid) {
         ListNode t1 = head, t2;
@@ -49,10 +47,8 @@ public class Solution {
             pre = pre.next;
             if(pre == end) break;
             pre = pre.next;
-            // if(pre == end) break;
             mid = mid.next;
         }
-        System.out.println(mid.val);
         return mid;
     }
 }
