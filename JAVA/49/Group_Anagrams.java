@@ -8,7 +8,7 @@ public class Solution {
             t.add("");
             lol.add(t);
         }
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>(); // <Production, Index>
         for(int i = 0; i < strs.length; i++) {
             int key = 1;
             for(int j = 0; j < strs[i].length(); j++) {
@@ -23,6 +23,9 @@ public class Solution {
                 lol.add(t);
                 map.put(key, index++);
             }
+        }
+        for(List list : lol) {
+            Collections.sort(list);
         }
         return lol;
     }
