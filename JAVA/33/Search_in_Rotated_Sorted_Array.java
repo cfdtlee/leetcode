@@ -11,11 +11,9 @@ public class Solution {
             if(nums[mid] < nums[end]) end = mid - 1;
             else start = mid + 1;
         }
-        // System.out.println(start);
         int minPos = start, realMid; start = 0; end = nums.length - 1;
         while(start <= end) { // <=
             mid = start + (end - start) / 2;
-            // System.out.println(mid);
             realMid = (mid + minPos) % nums.length; //
             if(nums[realMid] == target) return realMid;
             if(nums[realMid] < target) start = mid + 1;
