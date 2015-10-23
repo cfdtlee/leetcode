@@ -2,7 +2,7 @@ public class Solution {
     public int search(int[] nums, int target) {
         if(nums.length == 0) return -1;
         int start = 0, end = nums.length-1, mid;
-        while(start < end) { // get the real mid
+        while(start < end) { // get the real min
             mid = start + (end - start) / 2;
             if(mid >= 1 && nums[mid] < nums[mid-1]) {
                 start = mid;

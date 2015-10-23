@@ -17,7 +17,7 @@ public class Solution {
             map.clear();
             for(int j = i+1; j < points.length; j++) {
                 int x = points[j].x - points[i].x;
-                int y = points[j].y - points[i].y; // j
+                int y = points[j].y - points[i].y; // I used j j!!
                 if(x == 0 && y == 0) { //
                     overlap++;
                     continue;
