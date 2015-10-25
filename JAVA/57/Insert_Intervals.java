@@ -1,3 +1,4 @@
+// binary search 
 /**
  * Definition for an interval.
  * public class Interval {
@@ -54,4 +55,6 @@ public class Solution {
         return intervals;
     }
 }
+
+
 
