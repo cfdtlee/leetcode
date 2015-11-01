@@ -23,7 +23,7 @@ public class Solution {
 public class Solution {
     List<List<Integer>> lol = new LinkedList<List<Integer>>();
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        Boolean[] isVisited = new Boolean[candidates.length];
+        Boolean[] isVisited = new Boolean[candidates.length]; // avoid revisit
         Arrays.fill(isVisited, false);
         dfs(candidates, new LinkedList<Integer>(), target, 0, 0, isVisited);
         return lol;
@@ -31,7 +31,7 @@ public class Solution {
     void dfs(int[] candidates, List<Integer> list, int target, int sum, int max, Boolean[] isVisited) {
         if(sum > target) {return;}
         if(sum == target) {lol.add(new LinkedList<Integer>(list));}
-        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> set = new HashSet<Integer>(); // avoid duplicate
         for(int i = 0; i < candidates.length; i++) {
             if(candidates[i] >= max && !isVisited[i] && !set.contains(candidates[i])) {
                 set.add(candidates[i]);
