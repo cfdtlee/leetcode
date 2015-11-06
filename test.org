@@ -5,16 +5,15 @@
 
 ** 6331 Algorithm
 *** Review
-*** Prepare exam
+*** Prepare exam, Date: Nov 12
 
 ** 6441 Programming Language
-*** Project 3
+*** Project 3, Due: Nov 12
 *** Review
 
 ** 5901
-*** Paper!
+*** Paper! Due: Nov 6
+
 * Intern
-** 1point3aric
-*** share exp and create wechat group
 ** group chose
-*** sdfwe
+*** ios
